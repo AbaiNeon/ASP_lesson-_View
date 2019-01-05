@@ -1,0 +1,31 @@
+﻿
+@{
+    var text = ViewBag.MessageText;
+
+    string[] data = { "Игроки", "Команды" };
+}
+
+<h2>df</h2>
+<br />
+<div>
+    <button class="btn btn-danger">Button</button>
+    @text
+
+    <hr />
+    <ul>
+        @foreach(var item in data)
+        {
+            <li><a href="/Players">@item</a></li>
+        }
+    </ul>
+
+    @Html.Password("password","Пароль")
+    @using (@Html.BeginForm("Index", "Home", FormMethod.Get))
+    {
+        @Html.TextBox("textBox")
+        @Html.TextArea("textArea")
+        @Html.Label("label")
+        <input type="submit" value="Button"/>
+
+    }
+</div>
